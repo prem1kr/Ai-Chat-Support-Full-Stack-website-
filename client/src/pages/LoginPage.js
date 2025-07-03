@@ -13,7 +13,7 @@ const LoginPage = ({ onLogin }) => {
       const res = await axios.post('https://ai-chat-support-full-stack-website.onrender.com/api/auth/login', form);
       localStorage.setItem('token', res.data.token);
       onLogin(res.data.userId);
-      navigate('/'); // ✅ redirect to homepage or chat
+      navigate('/'); 
     } catch (err) {
       alert(err.response?.data?.error || 'Login failed');
     }
