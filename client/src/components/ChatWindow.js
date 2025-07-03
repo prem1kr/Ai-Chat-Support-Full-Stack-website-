@@ -14,7 +14,7 @@ const ChatWindow = ({ userId, convoId }) => {
     }
 
     axios
-      .get(`http://localhost:5000/api/chat/${convoId}`)
+      .get(`https://ai-chat-support-full-stack-website.onrender.com/api/chat/${convoId}`)
       .then((res) => setMessages(res.data))
       .catch((err) => {
         console.error('Failed to load messages:', err);
@@ -35,7 +35,7 @@ const ChatWindow = ({ userId, convoId }) => {
     setLoading(true);
 
     try {
-      const res = await axios.post('http://localhost:5000/api/chat', {
+      const res = await axios.post('https://ai-chat-support-full-stack-website.onrender.com/api/chat', {
         userId,
         convoId,
         message: input,
