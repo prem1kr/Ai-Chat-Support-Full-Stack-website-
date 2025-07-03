@@ -10,7 +10,7 @@ const LoginPage = ({ onLogin }) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', form);
+      const res = await axios.post('https://ai-chat-support-full-stack-website.onrender.com/api/auth/login', form);
       localStorage.setItem('token', res.data.token);
       onLogin(res.data.userId);
       navigate('/'); // ✅ redirect to homepage or chat
