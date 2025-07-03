@@ -4,11 +4,10 @@ import axios from 'axios';
 const Sidebar = ({ userId, onSelectChat }) => {
   const [conversations, setConversations] = useState([]);
 
-  // ✅ Memoize fetchConversations to avoid re-defining on every render
   const fetchConversations = useCallback(async () => {
     if (!userId) return;
     try {
-      const res = await axios.get(`http://localhost:5000/api/chat/history/${userId}`);
+      const res = await axios.get(`https://ai-chat-support-full-stack-website.onrender.com/api/chat/history/${userId}`);
       setConversations(res.data);
     } catch (err) {
       console.error('Error fetching conversations:', err);
@@ -21,11 +20,11 @@ const Sidebar = ({ userId, onSelectChat }) => {
 
   const handleNewChat = async () => {
     try {
-      const res = await axios.post('http://localhost:5000/api/chat/new', { userId });
+      const res = await axios.post('https://ai-chat-support-full-stack-website.onrender.com/api/chat/new', { userId });
       const newChatId = res.data.convoId;
 
       onSelectChat(newChatId);
-      await fetchConversations(); // ✅ update UI with new convo
+      await fetchConversations(); 
     } catch (err) {
       console.error('Error creating new chat:', err);
     }
