@@ -5,17 +5,21 @@ import '../styles/Auth.css';
 
 const LoginPage = ({ onLogin }) => {
   const [form, setForm] = useState({ email: '', password: '' });
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setLoading(true); 
     try {
       const res = await axios.post('https://ai-chat-support-full-stack-website.onrender.com/api/auth/login', form);
       localStorage.setItem('token', res.data.token);
       onLogin(res.data.userId);
-      navigate('/'); 
+      navigate('/');
     } catch (err) {
       alert(err.response?.data?.error || 'Login failed');
+    } finally {
+      setLoading(false); 
     }
   };
 
@@ -35,7 +39,13 @@ const LoginPage = ({ onLogin }) => {
           required
           onChange={(e) => setForm({ ...form, password: e.target.value })}
         />
-        <button type="submit">Login</button>
+        <button type="submit" disabled={loading}>
+          {loading ? (
+            <span className="spinner" />
+          ) : (
+            'Login'
+          )}
+        </button>
         <p>Don't have an account? <a href="/signup">Signup</a></p>
       </form>
     </div>
