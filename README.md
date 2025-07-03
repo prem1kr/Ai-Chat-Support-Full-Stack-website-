@@ -137,8 +137,10 @@ npm start
 ---
 
 ## 📸 Screenshots
+![image](https://github.com/user-attachments/assets/01a7a994-a39b-4e82-9a0e-df12feff1eac)
+![Screenshot 2025-07-03 150116](https://github.com/user-attachments/assets/98601b1a-2f6d-4c81-ab7a-0d25fb38846c)
+![Screenshot 2025-07-03 150116](https://github.com/user-attachments/assets/3e9d36fd-7eba-4dd0-a7f8-d0e40b418b25)
 
-> *(Include images of login, signup, and chat page with messages and AI responses.)*
 
 ---
 
