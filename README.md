@@ -154,14 +154,6 @@ npm start
 * **AI Integration:** google gimnia / LLM APIs
 * **Deployment:** Render + GitHub
 
----
-
-## 🧠 Future Improvements
-
-* Upload PDF/FAQ and generate contextual replies
-* Typing indicator animation
-* Admin dashboard for viewing all chats
-* Role-based access control
 
 ---
 
