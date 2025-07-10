@@ -68,7 +68,7 @@ npm install
 PORT=5000
 MONGO_URI=your_mongodb_connection_uri
 JWT_SECRET=your_jwt_secret
-OPENAI_API_KEY=your_openai_api_key (if using)
+GIMNIA_API_KEY=your_openai_api_key (if using)
 ```
 
 Start the backend server:
