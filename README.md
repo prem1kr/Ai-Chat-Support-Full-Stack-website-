@@ -68,7 +68,7 @@ npm install
 PORT=5000
 MONGO_URI=your_mongodb_connection_uri
 JWT_SECRET=your_jwt_secret
-GIMNIA_API_KEY=your_openai_api_key (if using)
+GIMNIA_API_KEY=your_gimnia_api_key (if using)
 ```
 
 Start the backend server:
@@ -151,7 +151,7 @@ npm start
 * **Backend:** Node.js, Express
 * **Database:** MongoDB (Mongoose)
 * **Auth:** JWT
-* **AI Integration:** OpenAI / LLM APIs
+* **AI Integration:** google gimnia / LLM APIs
 * **Deployment:** Render + GitHub
 
 ---
@@ -171,5 +171,3 @@ npm start
 * GitHub: [@prem1kr](https://github.com/prem1kr)
 
 ---
-
-Let me know if you'd like me to include a `LICENSE`, `CONTRIBUTING.md`, or auto-deploy GitHub Actions as well!
