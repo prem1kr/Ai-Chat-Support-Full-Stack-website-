@@ -37,7 +37,7 @@ This project is a full-stack AI-powered chat support platform built using the ME
 ## 🚀 Features
 
 * 🔐 User authentication (Signup/Login with JWT)
-* 🤖 AI-powered responses (Gimnia)
+* 🤖 AI-powered responses GEMINI
 * 💬 Real-time styled chat interface
 * 📁 Persistent chat history stored in MongoDB
 * 🎨 Responsive and modern UI
@@ -68,7 +68,7 @@ npm install
 PORT=5000
 MONGO_URI=your_mongodb_connection_uri
 JWT_SECRET=your_jwt_secret
-GIMNIA_API_KEY=your_gimnia_api_key (if using)
+GEMINI_API_KEY=your_gimnia_api_key (if using)
 ```
 
 Start the backend server:
