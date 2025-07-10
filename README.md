@@ -37,7 +37,7 @@ This project is a full-stack AI-powered chat support platform built using the ME
 ## 🚀 Features
 
 * 🔐 User authentication (Signup/Login with JWT)
-* 🤖 AI-powered responses (OpenAI or similar)
+* 🤖 AI-powered responses (Gimnia)
 * 💬 Real-time styled chat interface
 * 📁 Persistent chat history stored in MongoDB
 * 🎨 Responsive and modern UI
