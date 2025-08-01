@@ -24,11 +24,8 @@ const Sidebar = ({ userId, onSelectChat }) => {
       const newChatId = res.data.convoId;
 
       onSelectChat(newChatId);
-<<<<<<< HEAD
       await fetchConversations();
-=======
       await fetchConversations(); 
->>>>>>> f5ccbb88d9ceb06e4f56b2d60944dffd681e1335
     } catch (err) {
       console.error('Error creating new chat:', err);
     }
