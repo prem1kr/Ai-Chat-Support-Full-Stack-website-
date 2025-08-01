@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import ChatWindow from './components/ChatWindow';
-import LoginPage from './pages/LoginPage';
-import SignupPage from './pages/SignupPage';
+import LoginPage from './pages/LoginPage.js';
+import SignupPage from './pages/SignupPage.js';
 import './App.css';
 
 const MainApp = ({ userId, setUserId }) => {
