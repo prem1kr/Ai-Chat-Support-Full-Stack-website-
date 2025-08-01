@@ -15,7 +15,7 @@ const LoginPage = ({ onLogin }) => {
     setLoading(true);
 
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', form);
+      const res = await axios.post('https://ai-chat-support-full-stack-website.onrender.com/api/auth/login', form);
       const { token, userId, isAdmin } = res.data;
 
       localStorage.setItem('token', token);
