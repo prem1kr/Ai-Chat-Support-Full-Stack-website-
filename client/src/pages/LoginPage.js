@@ -12,7 +12,6 @@ const LoginPage = ({ onLogin }) => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-<<<<<<< HEAD
     setLoading(true);
 
     try {
@@ -35,7 +34,6 @@ const LoginPage = ({ onLogin }) => {
       alert(err.response?.data?.error || 'Login failed');
     } finally {
       setLoading(false);
-=======
     setLoading(true); 
     try {
       const res = await axios.post('https://ai-chat-support-full-stack-website.onrender.com/api/auth/login', form);
@@ -46,7 +44,6 @@ const LoginPage = ({ onLogin }) => {
       alert(err.response?.data?.error || 'Login failed');
     } finally {
       setLoading(false); 
->>>>>>> f5ccbb88d9ceb06e4f56b2d60944dffd681e1335
     }
   };
 
@@ -67,13 +64,11 @@ const LoginPage = ({ onLogin }) => {
           onChange={(e) => setForm({ ...form, password: e.target.value })}
         />
         <button type="submit" disabled={loading}>
-<<<<<<< HEAD
           {loading ? <span className="spinner" /> : 'Login'}
         </button>
         {!isAdminLogin && (
           <p>Don't have an account? <a href="/signup">Signup</a></p>
         )}
-=======
           {loading ? (
             <span className="spinner" />
           ) : (
@@ -81,7 +76,6 @@ const LoginPage = ({ onLogin }) => {
           )}
         </button>
         <p>Don't have an account? <a href="/signup">Signup</a></p>
->>>>>>> f5ccbb88d9ceb06e4f56b2d60944dffd681e1335
       </form>
     </div>
   );
