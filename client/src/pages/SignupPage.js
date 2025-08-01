@@ -34,7 +34,7 @@ const SignupPage = () => {
           onChange={(e) => setForm({ ...form, password: e.target.value })}
         />
         <button type="submit">Signup</button>
-        <p>Already have an account? <Link to= "/signup">Signup </Link></p>
+        <p>Already have an account? <a href="/signup">Signup</a></p>
       </form>
     </div>
   );
