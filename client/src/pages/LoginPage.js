@@ -15,18 +15,24 @@ const LoginPage = ({ onLogin }) => {
     setLoading(true);
 
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', form);
+      // Use environment-based URL if needed
+      const res = await axios.post(
+        'https://ai-chat-support-full-stack-website.onrender.com/api/auth/login',
+        form
+      );
+
       const { token, userId, isAdmin } = res.data;
 
       localStorage.setItem('token', token);
-      localStorage.setItem('isAdmin', isAdmin); 
-
+      localStorage.setItem('isAdmin', isAdmin);
       onLogin(userId);
 
-      if (isAdminLogin && isAdmin) {
-        navigate('/admin');
-      } else if (isAdminLogin && !isAdmin) {
-        alert('You are not authorized as admin.');
+      if (isAdminLogin) {
+        if (isAdmin) {
+          navigate('/admin');
+        } else {
+          alert('You are not authorized as admin.');
+        }
       } else {
         navigate('/');
       }
@@ -34,16 +40,6 @@ const LoginPage = ({ onLogin }) => {
       alert(err.response?.data?.error || 'Login failed');
     } finally {
       setLoading(false);
-    setLoading(true); 
-    try {
-      const res = await axios.post('https://ai-chat-support-full-stack-website.onrender.com/api/auth/login', form);
-      localStorage.setItem('token', res.data.token);
-      onLogin(res.data.userId);
-      navigate('/');
-    } catch (err) {
-      alert(err.response?.data?.error || 'Login failed');
-    } finally {
-      setLoading(false); 
     }
   };
 
@@ -69,13 +65,6 @@ const LoginPage = ({ onLogin }) => {
         {!isAdminLogin && (
           <p>Don't have an account? <a href="/signup">Signup</a></p>
         )}
-          {loading ? (
-            <span className="spinner" />
-          ) : (
-            'Login'
-          )}
-        </button>
-        <p>Don't have an account? <a href="/signup">Signup</a></p>
       </form>
     </div>
   );
