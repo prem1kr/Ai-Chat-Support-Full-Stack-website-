@@ -4,7 +4,6 @@ import axios from 'axios';
 const Sidebar = ({ userId, onSelectChat }) => {
   const [conversations, setConversations] = useState([]);
 
-  // ✅ Memoize fetchConversations to avoid re-defining on every render
   const fetchConversations = useCallback(async () => {
     if (!userId) return;
     try {
@@ -25,7 +24,7 @@ const Sidebar = ({ userId, onSelectChat }) => {
       const newChatId = res.data.convoId;
 
       onSelectChat(newChatId);
-      await fetchConversations(); // ✅ update UI with new convo
+      await fetchConversations();
     } catch (err) {
       console.error('Error creating new chat:', err);
     }
