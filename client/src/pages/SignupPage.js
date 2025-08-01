@@ -8,7 +8,7 @@ const SignupPage = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/auth/signup', form);
+      await axios.post('https://ai-chat-support-full-stack-website.onrender.com/api/auth/signup', form);
       alert('Signup successful! Now login.');
       window.location.href = '/login';
     } catch (err) {

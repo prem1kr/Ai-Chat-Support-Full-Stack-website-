@@ -7,7 +7,7 @@ const Sidebar = ({ userId, onSelectChat }) => {
   const fetchConversations = useCallback(async () => {
     if (!userId) return;
     try {
-      const res = await axios.get(`http://localhost:5000/api/chat/history/${userId}`);
+      const res = await axios.get(`https://ai-chat-support-full-stack-website.onrender.com/api/chat/history/${userId}`);
       setConversations(res.data);
     } catch (err) {
       console.error('Error fetching conversations:', err);
@@ -20,11 +20,15 @@ const Sidebar = ({ userId, onSelectChat }) => {
 
   const handleNewChat = async () => {
     try {
-      const res = await axios.post('http://localhost:5000/api/chat/new', { userId });
+      const res = await axios.post('https://ai-chat-support-full-stack-website.onrender.com/api/chat/new', { userId });
       const newChatId = res.data.convoId;
 
       onSelectChat(newChatId);
+<<<<<<< HEAD
       await fetchConversations();
+=======
+      await fetchConversations(); 
+>>>>>>> f5ccbb88d9ceb06e4f56b2d60944dffd681e1335
     } catch (err) {
       console.error('Error creating new chat:', err);
     }
