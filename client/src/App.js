@@ -40,11 +40,11 @@ function App() {
             userId ? (
               <MainApp userId={userId} setUserId={setUserId} />
             ) : (
-              <Navigate to="/signup" />
+              <Navigate to="/login" />
             )
           }
         />
-        <Route path="*" element={<Navigate to={userId ? '/' : '/signup'} />} />
+        <Route path="*" element={<Navigate to={userId ? '/' : '/login'} />} />
       </Routes>
     </Router>
   );
