@@ -15,24 +15,18 @@ const LoginPage = ({ onLogin }) => {
     setLoading(true);
 
     try {
-      // Use environment-based URL if needed
-      const res = await axios.post(
-        'https://ai-chat-support-full-stack-website.onrender.com/api/auth/login',
-        form
-      );
-
+      const res = await axios.post('http://localhost:5000/api/auth/login', form);
       const { token, userId, isAdmin } = res.data;
 
       localStorage.setItem('token', token);
-      localStorage.setItem('isAdmin', isAdmin);
+      localStorage.setItem('isAdmin', isAdmin); 
+
       onLogin(userId);
 
-      if (isAdminLogin) {
-        if (isAdmin) {
-          navigate('/admin');
-        } else {
-          alert('You are not authorized as admin.');
-        }
+      if (isAdminLogin && isAdmin) {
+        navigate('/admin');
+      } else if (isAdminLogin && !isAdmin) {
+        alert('You are not authorized as admin.');
       } else {
         navigate('/');
       }
