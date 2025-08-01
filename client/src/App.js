@@ -2,10 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import ChatWindow from './components/ChatWindow';
-import LoginPage from './pages/LoginPage';
-import SignupPage from './pages/SignupPage';
 import AdminDashboard from './pages/AdminDashboard'; 
-
 import LoginPage from './pages/LoginPage.js';
 import SignupPage from './pages/SignupPage.js';
 import './App.css';
