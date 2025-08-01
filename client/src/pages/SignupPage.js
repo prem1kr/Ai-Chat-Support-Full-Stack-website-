@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import '../styles/Auth.css';
-import {Link} from "react-router";
 
 const SignupPage = () => {
   const [form, setForm] = useState({ email: '', password: '' });
