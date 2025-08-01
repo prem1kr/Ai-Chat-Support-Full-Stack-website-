@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import '../styles/Auth.css';
+import {Link} from "react-router";
 
 const SignupPage = () => {
   const [form, setForm] = useState({ email: '', password: '' });
@@ -33,7 +34,7 @@ const SignupPage = () => {
           onChange={(e) => setForm({ ...form, password: e.target.value })}
         />
         <button type="submit">Signup</button>
-        <p>Already have an account? <a href="/login">Login</a></p>
+        <p>Already have an account? <Link to= "/signup">Signup </Link></p>
       </form>
     </div>
   );
